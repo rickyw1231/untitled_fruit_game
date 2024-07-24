@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Script to allow enemies to shoot
-
 public class ShootingScript : MonoBehaviour
 {
 
@@ -16,13 +14,13 @@ public class ShootingScript : MonoBehaviour
     public int numBullets; // Number of bullets to shoot
     public float timeBtwnBulls; // Time between shooting in the case of multiple bullets
 
-    [HideInInspector]
+    //[HideInInspector]
     private float periodCountDown; // For counting down between shooting periods
 
-    [HideInInspector]
+    //[HideInInspector]
     private float bulletCountDown; // For counting down between bullets
 
-    [HideInInspector]
+    //[HideInInspector]
     private float bulletsToShoot; // For determining the number of bullets left to shoot
 
     void Start()
@@ -35,14 +33,11 @@ public class ShootingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Begin shooting after a certain time period
         periodCountDown -= Time.deltaTime;
         if (periodCountDown <= 0)
         {
-            // If the enemy can still shoot, shoot
             if (bulletsToShoot > 0)
             {
-                // Shoot after the bulelt delay
                 bulletCountDown -= Time.deltaTime;
                 if(bulletCountDown <= 0)
                 {
@@ -51,7 +46,6 @@ public class ShootingScript : MonoBehaviour
                     Shoot();
                 }
             }
-            // Otherwise, reset the period countdown and restart
             else
             {
                 periodCountDown = delay;
@@ -63,7 +57,6 @@ public class ShootingScript : MonoBehaviour
     // Method to shoot
     void Shoot()
     {
-        // Create a bullet object and launch it in the direction of the player
         GameObject projectile = Instantiate(bullet, source);
         Rigidbody projRB = projectile.GetComponent<Rigidbody>();
         Vector3 direction = Vector3.Normalize(target.position - source.position);
