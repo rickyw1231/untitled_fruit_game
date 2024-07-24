@@ -69,8 +69,6 @@ public class ShootingScript : MonoBehaviour
         Rigidbody projRB = projectile.GetComponent<Rigidbody>();
         Vector3 direction = Vector3.Normalize(target.position - source.position);
         projRB.AddForce(direction * speed);
-
-        // Destroy the bullet after a period of time
         Destroy(projectile, _timeToDestroy);
     }
 }

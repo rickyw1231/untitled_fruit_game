@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
-    private readonly float _timeToDestroy = 5.0f; // Time until bullet is deleted
 
     public GameObject bullet; // Type of bullet to shoot
     public Transform source; // Position of source
@@ -69,8 +68,5 @@ public class ShootingScript : MonoBehaviour
         Rigidbody projRB = projectile.GetComponent<Rigidbody>();
         Vector3 direction = Vector3.Normalize(target.position - source.position);
         projRB.AddForce(direction * speed);
-
-        // Destroy the bullet after a period of time
-        Destroy(projectile, _timeToDestroy);
     }
 }
