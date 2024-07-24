@@ -27,7 +27,6 @@ public class ShootingScript : MonoBehaviour
     {
         periodCountDown = delay;
         bulletCountDown = timeBtwnBulls;
-        bulletsToShoot = numBullets;
     }
 
     // Update is called once per frame
@@ -36,20 +35,18 @@ public class ShootingScript : MonoBehaviour
         periodCountDown -= Time.deltaTime;
         if (periodCountDown <= 0)
         {
-            if (bulletsToShoot > 0)
+            if (bulletsToShoot >= 0)
             {
                 bulletCountDown -= Time.deltaTime;
                 if(bulletCountDown <= 0)
                 {
                     bulletsToShoot--;
-                    bulletCountDown = timeBtwnBulls;
                     Shoot();
                 }
             }
             else
             {
                 periodCountDown = delay;
-                bulletsToShoot = numBullets;
             }
         }
     }

@@ -36,7 +36,7 @@ public class ShootingScript : MonoBehaviour
         periodCountDown -= Time.deltaTime;
         if (periodCountDown <= 0)
         {
-            if (bulletsToShoot > 0)
+            if (bulletsToShoot >= 0)
             {
                 bulletCountDown -= Time.deltaTime;
                 if(bulletCountDown <= 0)

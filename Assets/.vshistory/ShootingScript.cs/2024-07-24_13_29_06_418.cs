@@ -14,20 +14,19 @@ public class ShootingScript : MonoBehaviour
     public int numBullets; // Number of bullets to shoot
     public float timeBtwnBulls; // Time between shooting in the case of multiple bullets
 
-    //[HideInInspector]
+    [HideInInspector]
     private float periodCountDown; // For counting down between shooting periods
 
-    //[HideInInspector]
+    [HideInInspector]
     private float bulletCountDown; // For counting down between bullets
 
-    //[HideInInspector]
+    [HideInInspector]
     private float bulletsToShoot; // For determining the number of bullets left to shoot
 
     void Start()
     {
         periodCountDown = delay;
         bulletCountDown = timeBtwnBulls;
-        bulletsToShoot = numBullets;
     }
 
     // Update is called once per frame
@@ -42,14 +41,12 @@ public class ShootingScript : MonoBehaviour
                 if(bulletCountDown <= 0)
                 {
                     bulletsToShoot--;
-                    bulletCountDown = timeBtwnBulls;
                     Shoot();
                 }
             }
             else
             {
                 periodCountDown = delay;
-                bulletsToShoot = numBullets;
             }
         }
     }

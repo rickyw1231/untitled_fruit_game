@@ -272,7 +272,8 @@ MonoBehaviour:
   target: {fileID: 998438397}
   speed: 500
   delay: 3
-  countDown: 3
+  numBullets: 3
+  timeBtwnBulls: 0.5
 --- !u!136 &304437361
 CapsuleCollider:
   m_ObjectHideFlags: 0
