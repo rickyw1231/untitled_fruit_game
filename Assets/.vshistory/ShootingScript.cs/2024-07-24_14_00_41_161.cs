@@ -65,7 +65,9 @@ public class ShootingScript : MonoBehaviour
     void Shoot()
     {
         // Create a bullet object and launch it in the direction of the player
-        GameObject projectile = Instantiate(bullet, source.position, source.rotation);
+        Vector3 myVector = new Vector3(8f, 1f, 2f);
+        GameObject projectile = Instantiate(bullet, myVector);
+        Debug.Log(source);
         Rigidbody projRB = projectile.GetComponent<Rigidbody>();
         Vector3 direction = Vector3.Normalize(target.position - source.position);
         projRB.AddForce(direction * speed);
