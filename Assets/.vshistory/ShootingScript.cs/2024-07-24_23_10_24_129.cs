@@ -38,7 +38,9 @@ public class ShootingScript : MonoBehaviour
     void Update()
     {
         // Face the player
-        transform.LookAt(target);
+        Vector3 direction = Vector3.Normalize(target.position - enemy.position);
+        Quaternion rotate = Quaternion.Euler(direction.x, direction.y, direction.z);
+        enemy.rotation = rotate;
 
         // Begin shooting after a certain time period
         periodCountDown -= Time.deltaTime;

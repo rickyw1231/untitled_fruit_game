@@ -10,7 +10,6 @@ public class ShootingScript : MonoBehaviour
 
     public GameObject bullet; // Type of bullet to shoot
     public Transform source; // Position of source
-    public Transform enemy; // Position of enemy, for rotation purposes
     public Transform target; // Object to shoot at
 
     public float speed; // Speed of bullet
@@ -37,9 +36,6 @@ public class ShootingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Face the player
-        transform.LookAt(target);
-
         // Begin shooting after a certain time period
         periodCountDown -= Time.deltaTime;
         if (periodCountDown <= 0)
@@ -70,8 +66,8 @@ public class ShootingScript : MonoBehaviour
     {
         // Create a bullet object and launch it in the direction of the player
         GameObject projectile = Instantiate(bullet, source.position, source.rotation);
-        Vector3 direction = Vector3.Normalize(target.position - source.position);
         Rigidbody projRB = projectile.GetComponent<Rigidbody>();
+        Vector3 direction = Vector3.Normalize(target.position - source.position);
         projRB.AddForce(direction * speed);
 
         // Destroy the bullet after a period of time

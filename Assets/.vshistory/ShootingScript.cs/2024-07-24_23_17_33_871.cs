@@ -38,6 +38,9 @@ public class ShootingScript : MonoBehaviour
     void Update()
     {
         // Face the player
+        /*Vector3 direction = target.position - enemy.position;
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        enemy.rotation = Quaternon.Slerp();*/
         transform.LookAt(target);
 
         // Begin shooting after a certain time period
