@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
-    private readonly float _timeToDestroy = 2.0f; // Time until bullet is deleted, this might become an attribute
+    private readonly float _timeToDestroy = 5.0f; // Time until bullet is deleted
 
     public GameObject bullet; // Type of bullet to shoot
     public Transform source; // Position of source
@@ -44,7 +44,6 @@ public class ShootingScript : MonoBehaviour
         {
             CountDown();
         }
-        // Otherwise, reset countdown and bullet fields
         else
         {
             periodCountDown = delay;

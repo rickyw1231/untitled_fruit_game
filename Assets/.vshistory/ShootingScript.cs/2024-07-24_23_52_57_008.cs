@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
-    private readonly float _timeToDestroy = 2.0f; // Time until bullet is deleted, this might become an attribute
+    private readonly float _timeToDestroy = 5.0f; // Time until bullet is deleted
 
     public GameObject bullet; // Type of bullet to shoot
     public Transform source; // Position of source
@@ -38,22 +38,17 @@ public class ShootingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Only shoot if player is within range
         float actualDistance = Vector3.Distance(target.position, transform.position);
         if(actualDistance <= requiredDistance)
         {
             CountDown();
         }
-        // Otherwise, reset countdown and bullet fields
         else
         {
             periodCountDown = delay;
-            bulletCountDown = timeBtwnBulls;
-            bulletsToShoot = numBullets;
         }
     }
 
-    // Method to count down until shooting
     void CountDown()
     {
         // Face the player
@@ -66,7 +61,7 @@ public class ShootingScript : MonoBehaviour
             // If the enemy can still shoot, shoot
             if (bulletsToShoot > 0)
             {
-                // Shoot after the bullet delay
+                // Shoot after the bulelt delay
                 bulletCountDown -= Time.deltaTime;
                 if (bulletCountDown <= 0)
                 {

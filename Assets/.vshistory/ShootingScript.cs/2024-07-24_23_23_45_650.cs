@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
-    private readonly float _timeToDestroy = 2.0f; // Time until bullet is deleted, this might become an attribute
+    private readonly float _timeToDestroy = 5.0f; // Time until bullet is deleted
 
     public GameObject bullet; // Type of bullet to shoot
     public Transform source; // Position of source
@@ -16,8 +16,6 @@ public class ShootingScript : MonoBehaviour
     public float delay; // Time between shooting periods
     public int numBullets; // Number of bullets to shoot
     public float timeBtwnBulls; // Time between shooting in the case of multiple bullets
-
-    public float requiredDistance; // Distance from player needed to begin shooting
 
     [HideInInspector]
     private float periodCountDown; // For counting down between shooting periods
@@ -38,24 +36,6 @@ public class ShootingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Only shoot if player is within range
-        float actualDistance = Vector3.Distance(target.position, transform.position);
-        if(actualDistance <= requiredDistance)
-        {
-            CountDown();
-        }
-        // Otherwise, reset countdown and bullet fields
-        else
-        {
-            periodCountDown = delay;
-            bulletCountDown = timeBtwnBulls;
-            bulletsToShoot = numBullets;
-        }
-    }
-
-    // Method to count down until shooting
-    void CountDown()
-    {
         // Face the player
         transform.LookAt(target);
 
@@ -66,9 +46,9 @@ public class ShootingScript : MonoBehaviour
             // If the enemy can still shoot, shoot
             if (bulletsToShoot > 0)
             {
-                // Shoot after the bullet delay
+                // Shoot after the bulelt delay
                 bulletCountDown -= Time.deltaTime;
-                if (bulletCountDown <= 0)
+                if(bulletCountDown <= 0)
                 {
                     bulletsToShoot--;
                     bulletCountDown = timeBtwnBulls;
