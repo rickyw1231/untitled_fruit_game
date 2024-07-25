@@ -10,6 +10,7 @@ public class ShootingScript : MonoBehaviour
 
     public GameObject bullet; // Type of bullet to shoot
     public Transform source; // Position of source
+    public Transform enemy; // Position of enemy, for rotation purposes
     public Transform target; // Object to shoot at
 
     public float speed; // Speed of bullet
