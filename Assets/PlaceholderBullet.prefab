@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 620658663155011048}
   - component: {fileID: 620658663155011049}
   - component: {fileID: 3096166189197625703}
+  - component: {fileID: 5239536573483965066}
   m_Layer: 0
   m_Name: PlaceholderBullet
   m_TagString: Untagged
@@ -114,3 +115,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5239536573483965066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620658663155011050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864e0973e5a0ebd489b543c8084c9a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yAxis: 1
