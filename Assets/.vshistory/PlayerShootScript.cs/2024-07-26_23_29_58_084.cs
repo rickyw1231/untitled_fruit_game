@@ -8,7 +8,7 @@ public class PlayerShootScript : MonoBehaviour
 {
     private readonly float _timeToDestroy = 3f; // Time until a bullet is destroyed
 
-    public Transform source; // Player gun position
+    public Transform player; // Player position
     public GameObject bullet; // Bullet to shoot
 
     public float speed; // Speed of bullet
@@ -34,7 +34,7 @@ public class PlayerShootScript : MonoBehaviour
             countdown = delay;
 
             // Shoot the bullet
-            GameObject projectile = Instantiate(bullet, source.position, source.rotation);
+            GameObject projectile = Instantiate(bullet, player.position, player.rotation);
             Vector3 direction = new Vector3(1f, 0f, 0f);
             Rigidbody projRB = projectile.GetComponent<Rigidbody>();
             projRB.AddForce(direction * speed);
