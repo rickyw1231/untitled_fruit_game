@@ -248,6 +248,8 @@ GameObject:
   - component: {fileID: 304437362}
   - component: {fileID: 304437361}
   - component: {fileID: 304437365}
+  - component: {fileID: 304437366}
+  - component: {fileID: 304437367}
   m_Layer: 0
   m_Name: PlaceholderEnemy
   m_TagString: Untagged
@@ -354,6 +356,36 @@ MonoBehaviour:
   delay: 3
   numBullets: 3
   timeBtwnBulls: 0.1
+  requiredDistance: 10
+--- !u!54 &304437366
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304437359}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!114 &304437367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304437359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864e0973e5a0ebd489b543c8084c9a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yAxis: 1
 --- !u!1001 &390189106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -934,6 +966,8 @@ GameObject:
   - component: {fileID: 998438393}
   - component: {fileID: 998438392}
   - component: {fileID: 998438391}
+  - component: {fileID: 998438398}
+  - component: {fileID: 998438399}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -969,7 +1003,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!143 &998438393
 CharacterController:
@@ -1069,6 +1103,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998438398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998438390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864e0973e5a0ebd489b543c8084c9a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yAxis: 1
+--- !u!114 &998438399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998438390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3cc3630898efc468f5722d9bb8b3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 998438397}
+  bullet: {fileID: 620658663155011050, guid: ed8c00a07d8daef47bf4f043da756432, type: 3}
+  speed: 500
+  delay: 0.1
 --- !u!1001 &1184780130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1829,11 +1892,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 620658663155011046, guid: ed8c00a07d8daef47bf4f043da756432, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 620658663155011046, guid: ed8c00a07d8daef47bf4f043da756432, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.76
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 620658663155011046, guid: ed8c00a07d8daef47bf4f043da756432, type: 3}
       propertyPath: m_LocalRotation.w
