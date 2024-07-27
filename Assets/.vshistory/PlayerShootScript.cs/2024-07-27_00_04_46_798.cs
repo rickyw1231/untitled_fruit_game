@@ -16,18 +16,15 @@ public class PlayerShootScript : MonoBehaviour
 
     private float countdown; // Used for timing the bullets
 
-    public Vector3 mousePos;
-
     void Start()
     {
         countdown = 0f;
-        mousePos = Vector3.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
-        mousePos = Aim();
+        Vector3 mousePos = Aim();
 
         // Count down the delay timer and determine whether the player can shoot
         bool playerCanShoot = CanShoot();
@@ -70,7 +67,7 @@ public class PlayerShootScript : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit mousePos;
 
-        if(Physics.Raycast(ray, out mousePos, Mathf.Infinity, 1))
+        if(Physics.Raycast(ray, out mousePos, Mathf.Infinity, 0))
         {
             return mousePos.point;
         }

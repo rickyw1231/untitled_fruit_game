@@ -16,19 +16,14 @@ public class PlayerShootScript : MonoBehaviour
 
     private float countdown; // Used for timing the bullets
 
-    public Vector3 mousePos;
-
     void Start()
     {
         countdown = 0f;
-        mousePos = Vector3.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
-        mousePos = Aim();
-
         // Count down the delay timer and determine whether the player can shoot
         bool playerCanShoot = CanShoot();
 
@@ -40,7 +35,7 @@ public class PlayerShootScript : MonoBehaviour
 
             // Shoot the bullet
             GameObject projectile = Instantiate(bullet, source.position, source.rotation);
-            Vector3 direction = Vector3.Normalize(mousePos - source.position);
+            Vector3 direction = new Vector3(1f, 0f, 0f);
             Rigidbody projRB = projectile.GetComponent<Rigidbody>();
             projRB.AddForce(direction * speed);
 
@@ -50,7 +45,7 @@ public class PlayerShootScript : MonoBehaviour
     }
 
     // Method to check if the player can shoot and handle the timer
-    private bool CanShoot()
+    bool CanShoot()
     {
         if(countdown <= 0)
         {
@@ -61,22 +56,6 @@ public class PlayerShootScript : MonoBehaviour
         {
             countdown -= Time.deltaTime;
             return false;
-        }
-    }
-
-    // Method to aim
-    private Vector3 Aim()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit mousePos;
-
-        if(Physics.Raycast(ray, out mousePos, Mathf.Infinity, 1))
-        {
-            return mousePos.point;
-        }
-        else
-        {
-            return Vector3.zero;
         }
     }
 }

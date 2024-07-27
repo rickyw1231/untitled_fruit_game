@@ -70,7 +70,7 @@ public class PlayerShootScript : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit mousePos;
 
-        if(Physics.Raycast(ray, out mousePos, Mathf.Infinity, 1))
+        if(Physics.Raycast(ray, out mousePos, Mathf.Infinity, 0))
         {
             return mousePos.point;
         }
