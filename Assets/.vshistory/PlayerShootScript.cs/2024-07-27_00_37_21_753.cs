@@ -52,13 +52,11 @@ public class PlayerShootScript : MonoBehaviour
     // Method to check if the player can shoot and handle the timer
     private bool CanShoot()
     {
-        // Allow shooting if timer is up
         if(countdown <= 0)
         {
             countdown = 0;
             return true;
         }
-        // Otherwise keep counting
         else
         {
             countdown -= Time.deltaTime;
@@ -72,10 +70,8 @@ public class PlayerShootScript : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit mousePos;
 
-        // Calculate the mouse position if possible
         if(Physics.Raycast(ray, out mousePos, Mathf.Infinity, 1))
         {
-            // Reset the y-position of the vector so that the player doesn't rotate
             Vector3 mousePosToVector = mousePos.point;
             Vector3 correctedMousePos = new Vector3(mousePosToVector.x, 1f, mousePosToVector.z);
             return correctedMousePos;

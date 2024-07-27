@@ -8,7 +8,6 @@ public class PlayerShootScript : MonoBehaviour
 {
     private readonly float _timeToDestroy = 3f; // Time until a bullet is destroyed
 
-    public Transform player; // Player body
     public Transform source; // Player gun position
     public GameObject bullet; // Bullet to shoot
 
@@ -25,9 +24,8 @@ public class PlayerShootScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Calculate the mouse position and face it
         Vector3 mousePos = Aim();
-        player.LookAt(mousePos);
+        transform.LookAt(mousePos);
 
         // Count down the delay timer and determine whether the player can shoot
         bool playerCanShoot = CanShoot();
@@ -52,13 +50,11 @@ public class PlayerShootScript : MonoBehaviour
     // Method to check if the player can shoot and handle the timer
     private bool CanShoot()
     {
-        // Allow shooting if timer is up
         if(countdown <= 0)
         {
             countdown = 0;
             return true;
         }
-        // Otherwise keep counting
         else
         {
             countdown -= Time.deltaTime;
@@ -66,23 +62,19 @@ public class PlayerShootScript : MonoBehaviour
         }
     }
 
-    // Method to aim 
+    // Method to aim
     private Vector3 Aim()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit mousePos;
 
-        // Calculate the mouse position if possible
         if(Physics.Raycast(ray, out mousePos, Mathf.Infinity, 1))
         {
-            // Reset the y-position of the vector so that the player doesn't rotate
-            Vector3 mousePosToVector = mousePos.point;
-            Vector3 correctedMousePos = new Vector3(mousePosToVector.x, 1f, mousePosToVector.z);
-            return correctedMousePos;
+            return mousePos.point;
         }
         else
         {
-            return new Vector3(0f, 1f, 0f);
+            return Vector3.zero;
         }
     }
 }
