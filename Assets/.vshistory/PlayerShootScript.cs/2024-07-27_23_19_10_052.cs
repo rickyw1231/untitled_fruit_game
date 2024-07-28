@@ -28,7 +28,7 @@ public class PlayerShootScript : MonoBehaviour
     {
         // Calculate the mouse position and face it
         Vector3 mousePos = Aim();
-        player.LookAt(new Vector3(mousePos.x, player.position.y, mousePos.z));
+        player.LookAt(Vector3(mousePos.position.x, player.position.y, mousePos.position.z));
 
         // Set the crosshair
         crossHair.position = mousePos;

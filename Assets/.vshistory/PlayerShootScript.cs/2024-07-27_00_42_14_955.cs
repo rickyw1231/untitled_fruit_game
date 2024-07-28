@@ -28,7 +28,7 @@ public class PlayerShootScript : MonoBehaviour
     {
         // Calculate the mouse position and face it
         Vector3 mousePos = Aim();
-        player.LookAt(new Vector3(mousePos.x, player.position.y, mousePos.z));
+        player.LookAt(mousePos);
 
         // Set the crosshair
         crossHair.position = mousePos;
@@ -81,12 +81,12 @@ public class PlayerShootScript : MonoBehaviour
         {
             // Reset the y-position of the vector so that the player doesn't rotate
             Vector3 mousePosToVector = mousePos.point;
-            Vector3 correctedMousePos = new Vector3(mousePosToVector.x, 0f, mousePosToVector.z);
+            Vector3 correctedMousePos = new Vector3(mousePosToVector.x, 1f, mousePosToVector.z);
             return correctedMousePos;
         }
         else
         {
-            return new Vector3(0f, 0f, 0f);
+            return new Vector3(0f, 1f, 0f);
         }
     }
 }
