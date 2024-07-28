@@ -20,12 +20,6 @@ public class Bullet : MonoBehaviour
         {
             other.gameObject.GetComponent<Player>().OnDamage(damage);
         }
-
-        // If the object hit was an enemy and the bullet is from the player, damage the enemy
-        else if (other.gameObject.tag == "Enemy" && fromPlayer)
-        {
-            other.gameObject.GetComponent<Enemy>().OnDamage(damage);
-        }
     }
 
 }
