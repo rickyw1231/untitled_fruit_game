@@ -10,7 +10,6 @@ public class PlayerShootScript : MonoBehaviour
 
     public Transform player; // Player body
     public Transform source; // Player gun position
-    public Transform crossHair; // Crosshair position
     public GameObject bullet; // Bullet to shoot
 
     public float speed; // Speed of bullet
@@ -29,9 +28,6 @@ public class PlayerShootScript : MonoBehaviour
         // Calculate the mouse position and face it
         Vector3 mousePos = Aim();
         player.LookAt(mousePos);
-
-        // Set the crosshair
-        crossHair.position = mousePos;
 
         // Count down the delay timer and determine whether the player can shoot
         bool playerCanShoot = CanShoot();
