@@ -8,7 +8,6 @@ public class Bullet : MonoBehaviour
 {
     public int damage; // Damage dealt by the bullet
 
-    // Event to destroy the bullet after collision
     public void OnDestroy()
     {
         Destroy(gameObject);
