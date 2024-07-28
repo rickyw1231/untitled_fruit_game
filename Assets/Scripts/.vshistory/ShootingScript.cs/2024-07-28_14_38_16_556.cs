@@ -47,7 +47,7 @@ public class ShootingScript : MonoBehaviour
         // Otherwise, reset countdown and bullet fields
         else
         {
-            periodCountDown = 0;
+            periodCountDown = delay;
             bulletCountDown = timeBtwnBulls;
             bulletsToShoot = numBullets;
         }
