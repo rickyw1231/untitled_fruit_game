@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 // Script to handle player information and player-related events
 
@@ -22,11 +21,17 @@ public class Player : MonoBehaviour
         // Damage the player by the damage dealt by the bullet
         hp -= damage;
 
-        // If the HP is 0, kill the player and reset the scene
-        if (hp <= 0)
+        // If the HP is 0, kill the player
+        if(hp <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            OnDeath();
         }
+    }
+
+    // Method to kill the player
+    private void OnDeath()
+    {
+        Destroy(gameObject);
     }
 
     // Event to heal the player
@@ -36,7 +41,7 @@ public class Player : MonoBehaviour
         hp += health;
 
         // If the resulting HP exceeds the max HP, set the HP to max
-        if (hp > maxHP)
+        if(hp > maxHP)
         {
             hp = maxHP;
         }
