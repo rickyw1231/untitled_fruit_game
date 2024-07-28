@@ -19,8 +19,8 @@ TagManager:
   - Map
   - Player
   - Enemy
-  - 
-  - 
+  - EnemyBullet
+  - PlayerBullet
   - 
   - 
   - 
