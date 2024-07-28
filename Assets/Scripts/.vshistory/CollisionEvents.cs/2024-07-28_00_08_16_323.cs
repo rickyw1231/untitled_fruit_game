@@ -10,7 +10,7 @@ public class CollisionEvents : MonoBehaviour
 
     private void OnTriggerEnter()
     {
-        Debug.Log("hit");
+        Debug.Log("hit")
         _onTriggerEnter?.Invoke();
     }
 }
