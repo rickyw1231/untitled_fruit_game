@@ -14,11 +14,12 @@ public class Bullet : MonoBehaviour
     {
         // Destroy the bullet on collision
         Destroy(gameObject);
-
+        Debug.Log(other.gameObject.tag);
         // If the object hit was the player and the bullet is not from the player, damage the player
         if (other.gameObject.tag == "Player" && !fromPlayer)
         {
-            other.gameObject.GetComponent<Player>().OnDamage(damage);
+            //Debug.Log(other.gameObject.tag);
+            //other.gameObject.GetComponent<Player>().OnDamage(damage);
         }
     }
 

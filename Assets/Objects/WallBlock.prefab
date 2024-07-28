@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4217514291013711211}
   - component: {fileID: 4217514291013711210}
   - component: {fileID: 4217514291013711213}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallBlock
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

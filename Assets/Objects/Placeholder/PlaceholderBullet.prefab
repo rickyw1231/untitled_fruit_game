@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 620658663155011049}
   - component: {fileID: 3096166189197625703}
   - component: {fileID: 5239536573483965066}
-  - component: {fileID: 3941041558614140041}
   - component: {fileID: -5598900296544154834}
   m_Layer: 9
   m_Name: PlaceholderBullet
@@ -130,33 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yAxis: 1
---- !u!114 &3941041558614140041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620658663155011050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfce0efa26450ad4ab1ec03c8968a54c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onTriggerEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -5598900296544154834}
-        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
-        m_MethodName: OnDestroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &-5598900296544154834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,4 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6520dedeffd81e40914e6fcc63d722b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 25
+  fromPlayer: 0
