@@ -46,6 +46,6 @@ public class Player : MonoBehaviour
     // Event to collect a coin
     public void OnCoinCollect()
     {
-        coinsCollected++;
+
     }
 }

@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     public int hp; // The player's maximum HP
 
     private int maxHP; // Maximum HP used for comparison
-    private int coinsCollected; // Number of coins collected by the player
 
     void Start()
     {
@@ -41,11 +40,5 @@ public class Player : MonoBehaviour
         {
             hp = maxHP;
         }
-    }
-
-    // Event to collect a coin
-    public void OnCoinCollect()
-    {
-        coinsCollected++;
     }
 }
