@@ -25,10 +25,9 @@ public class Coin : MonoBehaviour
             other.GetComponent<Player>().OnCoinCollect();
             Destroy(gameObject);
 
-            // Check if all coins have been collected
             if(other.GetComponent<Player>().CollectedAllCoins())
             {
-                Debug.Log("collected");
+                Debug.Log("collected")
             }
         }
     }

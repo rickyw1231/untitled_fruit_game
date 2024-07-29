@@ -50,9 +50,8 @@ public class Player : MonoBehaviour
         coinsCollected++;
     }
 
-    // Method to determine whether all coins have been collected
-    public bool CollectedAllCoins()
+    public int GetCoinsToWin()
     {
-        return coinsToWin == coinsCollected;
+        return coinsToWin;
     }
 }

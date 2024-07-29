@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public int hp; // The player's maximum HP
-    public int coinsToWin; // Number of coins needed to win
 
     private int maxHP; // Maximum HP used for comparison
     private int coinsCollected; // Number of coins collected by the player
@@ -48,11 +47,5 @@ public class Player : MonoBehaviour
     public void OnCoinCollect()
     {
         coinsCollected++;
-    }
-
-    // Method to determine whether all coins have been collected
-    public bool CollectedAllCoins()
-    {
-        return coinsToWin == coinsCollected;
     }
 }
