@@ -1,16 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 // Script to handle basic coin behaviors
 
 public class Coin : MonoBehaviour
 {
     public float speed; // Speed of rotation
-
-    [SerializeField]
-    private UnityEvent onTriggerEnter; // Events to execute
 
     // Update is called once per frame
     void Update()
@@ -32,8 +28,7 @@ public class Coin : MonoBehaviour
             // Check if all coins have been collected
             if(other.GetComponent<Player>().CollectedAllCoins())
             {
-                // If so, spawn new enemies
-                onTriggerEnter?.Invoke();
+                Debug.Log("collected");
             }
         }
     }

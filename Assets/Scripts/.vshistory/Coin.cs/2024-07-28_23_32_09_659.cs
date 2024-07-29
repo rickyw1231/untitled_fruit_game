@@ -33,7 +33,7 @@ public class Coin : MonoBehaviour
             if(other.GetComponent<Player>().CollectedAllCoins())
             {
                 // If so, spawn new enemies
-                onTriggerEnter?.Invoke();
+                onTriggerEnter?.Invoke()
             }
         }
     }
