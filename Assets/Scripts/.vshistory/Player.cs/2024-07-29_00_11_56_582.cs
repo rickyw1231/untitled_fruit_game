@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // Script to handle player information and player-related events
 
@@ -10,7 +11,7 @@ public class Player : MonoBehaviour
     public int hp; // The player's maximum HP
     public int coinsToWin; // Number of coins needed to win
 
-    public HealthBar healthBar; // Player health bar
+    public Slider healthBar; // Player health bar
 
     private int maxHP; // Maximum HP used for comparison
     private int coinsCollected; // Number of coins collected by the player
@@ -18,7 +19,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         maxHP = hp;
-        healthBar.SetHP(hp);
     }
 
     // Event to damage the player
@@ -32,9 +32,6 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
-        // Update the health bar
-        healthBar.SetHP(hp);
     }
 
     // Event to heal the player
@@ -48,9 +45,6 @@ public class Player : MonoBehaviour
         {
             hp = maxHP;
         }
-
-        // Update the health bar
-        healthBar.SetHP(hp);
     }
 
     // Event to collect a coin

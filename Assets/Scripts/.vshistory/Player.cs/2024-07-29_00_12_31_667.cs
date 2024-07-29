@@ -32,9 +32,6 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
-        // Update the health bar
-        healthBar.SetHP(hp);
     }
 
     // Event to heal the player
@@ -48,9 +45,6 @@ public class Player : MonoBehaviour
         {
             hp = maxHP;
         }
-
-        // Update the health bar
-        healthBar.SetHP(hp);
     }
 
     // Event to collect a coin
