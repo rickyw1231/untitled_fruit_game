@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 304437365}
   - component: {fileID: 304437366}
   - component: {fileID: 304437367}
+  - component: {fileID: 304437368}
   m_Layer: 8
   m_Name: PlaceholderEnemy
   m_TagString: Enemy
@@ -390,6 +391,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yAxis: 1
+--- !u!114 &304437368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304437359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f12454d822d37e4e9369ffa3db7ee31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!1001 &390189106
 PrefabInstance:
   m_ObjectHideFlags: 0
