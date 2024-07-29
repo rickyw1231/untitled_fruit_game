@@ -6,15 +6,6 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public float speed; // Speed of rotation
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Spin the coin
-        transform.Rotate(0, speed * Time.deltaTime, 0);
-    }
-
     // Method to allow coin to be collected by the player
     public void OnTriggerEnter(Collider other)
     {
