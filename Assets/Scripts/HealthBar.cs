@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
     public Slider healthBar; // Health bar slider
 
     // Method to set the value of the health bar
-    public void SetHP(int hp)
+    public void SetHP(float hp)
     {
         healthBar.value = hp;
     }

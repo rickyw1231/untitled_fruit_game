@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         maxHP = hp;
-        healthBar.SetHP(1);
+        healthBar.SetHP(hp);
     }
 
     // Event to damage the player
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         }
 
         // Update the health bar
-        healthBar.SetHP((float)hp/maxHP);
+        healthBar.SetHP(hp);
     }
 
     // Event to heal the player
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         }
 
         // Update the health bar
-        healthBar.SetHP((float)hp/maxHP);
+        healthBar.SetHP(hp);
     }
 
     // Event to collect a coin
