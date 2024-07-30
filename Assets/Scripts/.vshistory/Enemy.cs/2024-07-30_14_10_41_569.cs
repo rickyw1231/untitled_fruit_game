@@ -29,20 +29,19 @@ public class Enemy : MonoBehaviour
         // If HP is 0, kill the enemy and try dropping an item 
         if(hp <= 0)
         {
-            DropItem();
             Destroy(gameObject);
+            DropItem();
         }
     }
 
     // Method to drop an item on death
     private void DropItem()
     {
-        // 1/3 chance to drop an item
-        int check = Random.Range(1, 4);
+        int check = Random.Range(1, 3);
+        
         if(check == 3)
         {
-            Vector3 position = new Vector3(transform.position.x, 0.25f, transform.position.z);
-            Instantiate(item, position, Quaternion.identity);
+            Instantiate(item, transform);
         }
     }
 }

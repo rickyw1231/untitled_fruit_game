@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour
 {
     public int hp; // Current enemy HP
     public HealthBar healthBar; // Enemy health bar
-    public GameObject item; // Item to drop on death
 
     private int maxHP; // Maximum enemy HP
 
@@ -26,23 +25,10 @@ public class Enemy : MonoBehaviour
         // Update the health bar
         healthBar.SetHP((float)hp / maxHP);
 
-        // If HP is 0, kill the enemy and try dropping an item 
+        // If HP is 0, kill the enemy
         if(hp <= 0)
         {
-            DropItem();
             Destroy(gameObject);
-        }
-    }
-
-    // Method to drop an item on death
-    private void DropItem()
-    {
-        // 1/3 chance to drop an item
-        int check = Random.Range(1, 4);
-        if(check == 3)
-        {
-            Vector3 position = new Vector3(transform.position.x, 0.25f, transform.position.z);
-            Instantiate(item, position, Quaternion.identity);
         }
     }
 }

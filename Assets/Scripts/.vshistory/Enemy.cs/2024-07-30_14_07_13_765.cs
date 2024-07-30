@@ -26,10 +26,9 @@ public class Enemy : MonoBehaviour
         // Update the health bar
         healthBar.SetHP((float)hp / maxHP);
 
-        // If HP is 0, kill the enemy and try dropping an item 
+        // If HP is 0, kill the enemy
         if(hp <= 0)
         {
-            DropItem();
             Destroy(gameObject);
         }
     }
@@ -37,12 +36,12 @@ public class Enemy : MonoBehaviour
     // Method to drop an item on death
     private void DropItem()
     {
-        // 1/3 chance to drop an item
-        int check = Random.Range(1, 4);
+        Random rand = new Random();
+        int check = rand.Next(1, 4);
+        Debug.Log(check);
         if(check == 3)
         {
-            Vector3 position = new Vector3(transform.position.x, 0.25f, transform.position.z);
-            Instantiate(item, position, Quaternion.identity);
+            Instantiate(item, transform.position);
         }
     }
 }

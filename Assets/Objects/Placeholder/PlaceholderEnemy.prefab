@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   healthBar: {fileID: 7586278532987960140}
+  item: {fileID: 4369371049948412196, guid: 2ee7011bf6db1ad489636d2415825d96, type: 3}
 --- !u!1001 &1705419345
 PrefabInstance:
   m_ObjectHideFlags: 0

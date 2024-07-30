@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     private void DropItem()
     {
         // 1/3 chance to drop an item
-        int check = Random.Range(1, 4);
+        int check = Random.Range(1, 3);
         if(check == 3)
         {
             Vector3 position = new Vector3(transform.position.x, 0.25f, transform.position.z);
