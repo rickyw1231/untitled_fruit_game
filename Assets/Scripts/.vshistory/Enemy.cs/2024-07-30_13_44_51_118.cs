@@ -22,7 +22,6 @@ public class Enemy : MonoBehaviour
         // Reduce HP by bullet damage
         hp -= damage;
 
-        // Update the health bar
         healthBar.SetHP((float)hp / maxHP);
 
         // If HP is 0, kill the enemy
