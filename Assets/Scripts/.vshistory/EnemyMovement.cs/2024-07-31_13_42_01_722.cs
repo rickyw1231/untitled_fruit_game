@@ -20,6 +20,8 @@ public class EnemyMovement : MonoBehaviour
 
     private float countdown; // Used for counting down the timer
 
+    //private static List<Vector3> directions; // List of vectors for direction
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
     private void RandomMovement()
     {
         // Move if far away enough from the player
-        float distance = Vector3.Distance(player.position, transform.position);
+        int distance = Vector3.Distance(player.position, transform.position);
         if(distance >= range)
         {
             // Switch direction after countdown

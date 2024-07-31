@@ -18,11 +18,30 @@ public class EnemyMovement : MonoBehaviour
     public float speed; // Speed of movement
     public float timer; // Time between movement switching, if applicable
 
-    private float countdown; // Used for counting down the timer
+    public float distance; // Distance between player and enemy
+    public float countdown; // Used for counting down from the timer
+    public int direction; // Direction of movement from list
+    public Vector3 displacement; // Amount to move
+
+    public string debug;
+
+    //private static List<Vector3> directions; // List of vectors for direction
 
     // Start is called before the first frame update
     void Start()
     {
+        /*directions = new List<Vector3>
+        {
+            new(0f, 0f, 1f),
+            new(1f, 0f, 0f),
+            new(0f, 0f, -1f),
+            new(-1f, 0f, 0f),
+            new(0.7f, 0f, 0.7f),
+            new(-0.7f, 0f, -0.7f),
+            new(0.7f, 0f, -0.7f),
+            new(-0.7f, 0f, 0.7f),
+        };*/
+
         countdown = 0;
     }
 
@@ -42,7 +61,7 @@ public class EnemyMovement : MonoBehaviour
     private void RandomMovement()
     {
         // Move if far away enough from the player
-        float distance = Vector3.Distance(player.position, transform.position);
+        distance = Vector3.Distance(player.position, transform.position);
         if(distance >= range)
         {
             // Switch direction after countdown
@@ -57,7 +76,7 @@ public class EnemyMovement : MonoBehaviour
 
                 // Generate a random direction, multiply it by the speed, and move
                 Vector3 direction = Vector3.Normalize(new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)));
-                Vector3 displacement = direction * speed;
+                Vector3 displacement = directions[direction] * speed;
                 rb.AddForce(displacement);
             }
             // Otherwise continue the countdown
@@ -65,6 +84,9 @@ public class EnemyMovement : MonoBehaviour
             {
                 countdown -= Time.deltaTime;
             }
+
+            // Move the enemy
+            transform.position += displacement;
         }
         // Otherwise reset the countdown and don't move
         else

@@ -42,7 +42,7 @@ public class EnemyMovement : MonoBehaviour
     private void RandomMovement()
     {
         // Move if far away enough from the player
-        float distance = Vector3.Distance(player.position, transform.position);
+        int distance = Vector3.Distance(player.position, transform.position);
         if(distance >= range)
         {
             // Switch direction after countdown
