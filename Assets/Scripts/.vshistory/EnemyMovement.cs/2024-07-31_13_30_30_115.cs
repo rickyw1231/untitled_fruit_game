@@ -51,10 +51,10 @@ public class EnemyMovement : MonoBehaviour
         // Move based off of the movement type
         switch(movementType)
         {
-            case MovementType.RandomMovement:
+            case MovementType.RandomMovement {
                 RandomMovement();
                 break;
-        }
+            }
     }
 
     // Method to handle random movement

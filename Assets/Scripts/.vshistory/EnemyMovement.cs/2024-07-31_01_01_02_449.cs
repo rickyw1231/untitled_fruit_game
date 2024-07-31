@@ -23,13 +23,20 @@ public class EnemyMovement : MonoBehaviour
     public int direction; // Direction of movement from list
     public Vector3 displacement; // Amount to move
 
-    public string debug;
-
+    private delegate void MovementDelegate(); // Used for calling methods for each movement type
+    private static Dictionary<MovementType, MovementDelegate> movementHandler; // Data drives movement methods
     private static List<Vector3> directions; // List of vectors for direction
 
     // Start is called before the first frame update
     void Start()
     {
+        movementHandler = new Dictionary<MovementType, MovementDelegate>
+        {
+            { 
+                MovementType.RandomMovement, RandomMovement
+            }
+        };
+
         directions = new List<Vector3>
         {
             new(0f, 0f, 1f),
@@ -43,18 +50,16 @@ public class EnemyMovement : MonoBehaviour
         };
 
         countdown = 0;
+        direction = Random.Range(0, 8);
+        displacement = directions[direction] * Time.deltaTime * speed;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Move based off of the movement type
-        switch(movementType)
-        {
-            case MovementType.RandomMovement:
-                RandomMovement();
-                break;
-        }
+        MovementDelegate move = movementHandler[movementType];
+        move();
     }
 
     // Method to handle random movement
@@ -70,14 +75,9 @@ public class EnemyMovement : MonoBehaviour
                 // Reset the countdown
                 countdown = timer;
 
-                // Stop current movement
-                Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-                rb.velocity = Vector3.zero;
-
-                // Generate a random direction, multiply it by the speed, and move
-                int direction = Random.Range(0, 8);
-                Vector3 displacement = directions[direction] * speed;
-                rb.AddForce(displacement);
+                // Generate a random direction and multiply it by the speed
+                direction = Random.Range(0, 8);
+                displacement = directions[direction] * Time.deltaTime * speed;
             }
             // Otherwise continue the countdown
             else
@@ -92,8 +92,6 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             countdown = 0;
-            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.zero;
         }
     }
 }

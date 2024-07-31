@@ -25,11 +25,20 @@ public class EnemyMovement : MonoBehaviour
 
     public string debug;
 
+    private delegate void MovementDelegate(); // Used for calling methods for each movement type
+    private static Dictionary<MovementType, MovementDelegate> movementHandler; // Data drives movement methods
     private static List<Vector3> directions; // List of vectors for direction
 
     // Start is called before the first frame update
     void Start()
     {
+        movementHandler = new Dictionary<MovementType, MovementDelegate>
+        {
+            { 
+                MovementType.RandomMovement, RandomMovement
+            }
+        };
+
         directions = new List<Vector3>
         {
             new(0f, 0f, 1f),
@@ -49,12 +58,8 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         // Move based off of the movement type
-        switch(movementType)
-        {
-            case MovementType.RandomMovement:
-                RandomMovement();
-                break;
-        }
+        MovementDelegate move = movementHandler[movementType];
+        move();
     }
 
     // Method to handle random movement
@@ -76,8 +81,9 @@ public class EnemyMovement : MonoBehaviour
 
                 // Generate a random direction, multiply it by the speed, and move
                 int direction = Random.Range(0, 8);
-                Vector3 displacement = directions[direction] * speed;
+                Vector3 displacement = directions[direction] * Time.deltaTime * speed;
                 rb.AddForce(displacement);
+                Debug.log(debug);
             }
             // Otherwise continue the countdown
             else

@@ -279,8 +279,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementType: 0
-  range: 0
-  speed: 0
+  player: {fileID: 0}
+  range: 5
+  speed: 2
+  timer: 1
+  distance: 0
+  countdown: 0
+  direction: 0
+  displacement: {x: 0, y: 0, z: 0}
 --- !u!1001 &1705419345
 PrefabInstance:
   m_ObjectHideFlags: 0
