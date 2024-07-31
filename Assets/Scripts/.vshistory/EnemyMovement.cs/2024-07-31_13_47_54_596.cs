@@ -7,8 +7,7 @@ using UnityEngine;
 // Enums for each type of movement
 public enum MovementType
 {
-    RandomMovement, // Move in random directions
-    Chase // Chase the player within a certain distance
+    RandomMovement // Move in random directions
 }
 
 public class EnemyMovement : MonoBehaviour
@@ -16,7 +15,6 @@ public class EnemyMovement : MonoBehaviour
     public MovementType movementType; // Assigned movement type
     public Transform player; // Location of player for distance calculations
     public float range; // Distance from player in which enemy can move
-    public float chaseRange; // Distance from player in which enemy begins chase
     public float speed; // Speed of movement
     public float timer; // Time between movement switching, if applicable
 
@@ -36,9 +34,6 @@ public class EnemyMovement : MonoBehaviour
         {
             case MovementType.RandomMovement:
                 RandomMovement();
-                break;
-            case MovementType.Chase:
-                Chase();
                 break;
         }
     }
@@ -76,22 +71,6 @@ public class EnemyMovement : MonoBehaviour
         {
             countdown = 0;
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.zero;
-        }
-    }
-
-    // Method to chase the player within a certain range
-    private void Chase()
-    {
-        float distance = Vector3.Distance(player.position, transform.position);
-        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        if (distance >= range && distance <= chaseRange)
-        {
-            Vector3 direction = Vector3.Normalize(player.position - transform.position);
-            rb.velocity = direction * speed;
-        }
-        else
-        {
             rb.velocity = Vector3.zero;
         }
     }

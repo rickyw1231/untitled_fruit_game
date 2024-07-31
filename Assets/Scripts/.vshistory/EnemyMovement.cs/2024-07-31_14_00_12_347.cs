@@ -87,8 +87,9 @@ public class EnemyMovement : MonoBehaviour
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         if (distance >= range && distance <= chaseRange)
         {
+            //rb.velocity = Vector3.zero;
             Vector3 direction = Vector3.Normalize(player.position - transform.position);
-            rb.velocity = direction * speed;
+            rb.AddForce(direction * speed);
         }
         else
         {

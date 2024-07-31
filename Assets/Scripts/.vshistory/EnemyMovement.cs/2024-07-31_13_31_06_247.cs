@@ -13,6 +13,7 @@ public enum MovementType
 public class EnemyMovement : MonoBehaviour
 {
     public MovementType movementType; // Assigned movement type
+    public Transform player; // Location of player for distance calculations
     public float range; // Distance from player in which enemy can move
     public float speed; // Speed of movement
     public float timer; // Time between movement switching, if applicable
