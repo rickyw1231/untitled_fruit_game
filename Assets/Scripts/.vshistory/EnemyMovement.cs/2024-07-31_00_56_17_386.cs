@@ -18,10 +18,10 @@ public class EnemyMovement : MonoBehaviour
     public float speed; // Speed of movement
     public float timer; // Time between movement switching, if applicable
 
-    public float distance; // Distance between player and enemy
-    public float countdown; // Used for counting down from the timer
-    public int direction; // Direction of movement from list
-    public Vector3 displacement; // Amount to move
+    private float distance; // Distance between player and enemy
+    private float countdown; // Used for counting down from the timer
+    private int direction; // Direction of movement from list
+    private Vector3 displacement; // Amount to move
 
     private delegate void MovementDelegate(); // Used for calling methods for each movement type
     private static Dictionary<MovementType, MovementDelegate> movementHandler; // Data drives movement methods

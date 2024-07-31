@@ -18,14 +18,10 @@ public class EnemyMovement : MonoBehaviour
     public float speed; // Speed of movement
     public float timer; // Time between movement switching, if applicable
 
-    public float distance; // Distance between player and enemy
-    public float countdown; // Used for counting down from the timer
-    public int direction; // Direction of movement from list
-    public Vector3 displacement; // Amount to move
-
+    private float distance; // Distance between player and enemy
     private delegate void MovementDelegate(); // Used for calling methods for each movement type
     private static Dictionary<MovementType, MovementDelegate> movementHandler; // Data drives movement methods
-    private static List<Vector3> directions; // List of vectors for direction
+    private static List<Vector3> directions; // List of unit vectors for direction
 
     // Start is called before the first frame update
     void Start()
@@ -43,21 +39,16 @@ public class EnemyMovement : MonoBehaviour
             new(1f, 0f, 0f),
             new(0f, 0f, -1f),
             new(-1f, 0f, 0f),
-            new(0.7f, 0f, 0.7f),
-            new(-0.7f, 0f, -0.7f),
-            new(0.7f, 0f, -0.7f),
-            new(-0.7f, 0f, 0.7f),
+            new(0.5f, 0f, 0.5f),
+            new(-0.5f, 0f, -0.5f),
+            new(0.5f, 0f, -0.5f),
+            new(-0.5f, 0f, 0.5f),
         };
-
-        countdown = 0;
-        direction = Random.Range(0, 8);
-        displacement = directions[direction] * Time.deltaTime * speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Move based off of the movement type
         MovementDelegate move = movementHandler[movementType];
         move();
     }
@@ -65,33 +56,14 @@ public class EnemyMovement : MonoBehaviour
     // Method to handle random movement
     private void RandomMovement()
     {
-        // Move if far away enough from the player
+        // Move if far away from the player
         distance = Vector3.Distance(player.position, transform.position);
         if(distance >= range)
         {
-            // Switch direction after countdown
-            if (countdown <= 0)
-            {
-                // Reset the countdown
-                countdown = timer;
-
-                // Generate a random direction and multiply it by the speed
-                direction = Random.Range(0, 8);
-                displacement = directions[direction] * Time.deltaTime * speed;
-            }
-            // Otherwise continue the countdown
-            else
-            {
-                countdown -= Time.deltaTime;
-            }
-
-            // Move the enemy
+            // Generate a random direction, multiply it by the speed, and move the enemy
+            int direction = Random.Range(0, 8);
+            Vector3 displacement = directions[direction] * Time.deltaTime * speed;
             transform.position += displacement;
-        }
-        // Otherwise reset the countdown and don't move
-        else
-        {
-            countdown = 0;
         }
     }
 }

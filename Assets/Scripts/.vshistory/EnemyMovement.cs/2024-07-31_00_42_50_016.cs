@@ -18,9 +18,9 @@ public class EnemyMovement : MonoBehaviour
     public float speed; // Speed of movement
     public float timer; // Time between movement switching, if applicable
 
-    public float distance; // Distance between player and enemy
-    public float countdown; // Used for counting down from the timer
-    public int direction; // Direction of movement from list
+    private float distance; // Distance between player and enemy
+    private float countdown; // Used for counting down from the timer
+    private int direction; // Direction of movement from list
     public Vector3 displacement; // Amount to move
 
     private delegate void MovementDelegate(); // Used for calling methods for each movement type
@@ -30,6 +30,10 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        countdown = 0;
+        direction = Random.Range(0, 8);
+        displacement = directions[direction] * Time.deltaTime * speed;
+
         movementHandler = new Dictionary<MovementType, MovementDelegate>
         {
             { 
@@ -43,15 +47,11 @@ public class EnemyMovement : MonoBehaviour
             new(1f, 0f, 0f),
             new(0f, 0f, -1f),
             new(-1f, 0f, 0f),
-            new(0.7f, 0f, 0.7f),
-            new(-0.7f, 0f, -0.7f),
-            new(0.7f, 0f, -0.7f),
-            new(-0.7f, 0f, 0.7f),
+            new(0.5f, 0f, 0.5f),
+            new(-0.5f, 0f, -0.5f),
+            new(0.5f, 0f, -0.5f),
+            new(-0.5f, 0f, 0.5f),
         };
-
-        countdown = 0;
-        direction = Random.Range(0, 8);
-        displacement = directions[direction] * Time.deltaTime * speed;
     }
 
     // Update is called once per frame
