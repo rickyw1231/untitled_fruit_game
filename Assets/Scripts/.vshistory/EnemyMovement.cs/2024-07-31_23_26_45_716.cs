@@ -64,9 +64,8 @@ public class EnemyMovement : MonoBehaviour
 
                 // Generate a random direction, multiply it by the speed, and move
                 Vector3 direction = Vector3.Normalize(new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)));
-                Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
-                transform.rotation = rotation;
                 Vector3 displacement = direction * speed;
+                transform.LookAt(direction);
                 rb.AddForce(displacement);
             }
             // Otherwise continue the countdown

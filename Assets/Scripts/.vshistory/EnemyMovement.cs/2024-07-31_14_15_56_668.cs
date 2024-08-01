@@ -64,8 +64,6 @@ public class EnemyMovement : MonoBehaviour
 
                 // Generate a random direction, multiply it by the speed, and move
                 Vector3 direction = Vector3.Normalize(new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)));
-                Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
-                transform.rotation = rotation;
                 Vector3 displacement = direction * speed;
                 rb.AddForce(displacement);
             }
@@ -87,12 +85,10 @@ public class EnemyMovement : MonoBehaviour
     // Method to chase the player within a certain range
     private void Chase()
     {
-        // Only move when player is within a certain distance range
         float distance = Vector3.Distance(player.position, transform.position);
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         if (distance >= range && distance <= chaseRange)
         {
-            transform.LookAt(player);
             Vector3 direction = Vector3.Normalize(player.position - transform.position);
             rb.velocity = direction * speed;
         }
