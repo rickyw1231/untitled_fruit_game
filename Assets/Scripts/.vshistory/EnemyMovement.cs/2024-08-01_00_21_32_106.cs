@@ -26,7 +26,7 @@ public class EnemyMovement : MonoBehaviour
     private float distance; // Distance to player
     private Vector3 direction; // Direction to move in
     private Rigidbody rb; // Rigidbody of enemy
-    public int pathNum; // Path point currently being traveled to
+    private int pathNum; // Path point currently being traveled to
     private float distanceToPoint; // Distance to the next path point
     private float prevDistToPoint; // Distance to next path point in previous frame
 
@@ -118,20 +118,19 @@ public class EnemyMovement : MonoBehaviour
         if (distance >= range)
         {
             distanceToPoint = Vector3.Distance(pathPoints[pathNum].position, transform.position);
-            Debug.Log("dist " + distanceToPoint);
-            Debug.Log("prev dist " + prevDistToPoint);
-            if(distanceToPoint <= prevDistToPoint)
+            if(distanceToPoint < prevDistToPoint)
             {
-                Debug.Log("yes");
                 prevDistToPoint = distanceToPoint;
             }
             else
             {
-                Debug.Log("no");
-                pathNum++;
-                if(pathNum >= pathPoints.Length)
+                if(pathNum > pathPoints.Length)
                 {
                     pathNum = 0;
+                }
+                else
+                {
+                    pathNum++;
                 }
                 prevDistToPoint = Vector3.Distance(pathPoints[pathNum].position, transform.position);
                 direction = Vector3.Normalize(pathPoints[pathNum].position - transform.position);

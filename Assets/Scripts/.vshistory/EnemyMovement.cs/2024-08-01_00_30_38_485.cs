@@ -120,7 +120,7 @@ public class EnemyMovement : MonoBehaviour
             distanceToPoint = Vector3.Distance(pathPoints[pathNum].position, transform.position);
             Debug.Log("dist " + distanceToPoint);
             Debug.Log("prev dist " + prevDistToPoint);
-            if(distanceToPoint <= prevDistToPoint)
+            if(distanceToPoint < prevDistToPoint)
             {
                 Debug.Log("yes");
                 prevDistToPoint = distanceToPoint;
