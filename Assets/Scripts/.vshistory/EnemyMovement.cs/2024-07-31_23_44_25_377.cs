@@ -20,7 +20,6 @@ public class EnemyMovement : MonoBehaviour
     public float chaseRange; // Distance from player in which enemy begins chase
     public float speed; // Speed of movement
     public float timer; // Time between movement switching, if applicable
-    public Transform[] pathPoints; // Points on map to travel to in order
 
     private float countdown; // Used for counting down the timer
     private float distance; // Distance to player
@@ -109,10 +108,6 @@ public class EnemyMovement : MonoBehaviour
     // Method to follow a path around the level
     private void Pathfind()
     {
-        distance = Vector3.Distance(player.position, transform.position);
-        if (distance >= range)
-        {
-
-        }
+        
     }
 }
