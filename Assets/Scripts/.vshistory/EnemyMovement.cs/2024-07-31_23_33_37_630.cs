@@ -8,8 +8,7 @@ using UnityEngine;
 public enum MovementType
 {
     RandomMovement, // Move in random directions
-    Chase, // Chase the player within a certain distance
-    Pathfind // Follow a specific path around the map
+    Chase // Chase the player within a certain distance
 }
 
 public class EnemyMovement : MonoBehaviour
@@ -22,16 +21,14 @@ public class EnemyMovement : MonoBehaviour
     public float timer; // Time between movement switching, if applicable
 
     private float countdown; // Used for counting down the timer
-    private float distance; // Distance to player
-    private Vector3 direction; // Direction to move in
-    private Rigidbody rb; // Rigidbody of enemy
 
     // Start is called before the first frame update
     void Start()
     {
         countdown = 0;
-        rb = gameObject.GetComponent<Rigidbody>();
     }
+
+    // NEED TO FACE MOVEMENT DIRECTION
 
     // Update is called once per frame
     void Update()
@@ -45,9 +42,6 @@ public class EnemyMovement : MonoBehaviour
             case MovementType.Chase:
                 Chase();
                 break;
-            case MovementType.Pathfind:
-                Pathfind();
-                break;
         }
     }
 
@@ -55,7 +49,7 @@ public class EnemyMovement : MonoBehaviour
     private void RandomMovement()
     {
         // Move if far away enough from the player
-        distance = Vector3.Distance(player.position, transform.position);
+        float distance = Vector3.Distance(player.position, transform.position);
         if(distance >= range)
         {
             // Switch direction after countdown
@@ -65,10 +59,11 @@ public class EnemyMovement : MonoBehaviour
                 countdown = timer;
 
                 // Stop current movement
+                Rigidbody rb = gameObject.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
 
                 // Generate a random direction, multiply it by the speed, and move
-                direction = Vector3.Normalize(new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)));
+                Vector3 direction = Vector3.Normalize(new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)));
                 Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
                 transform.rotation = rotation;
                 Vector3 displacement = direction * speed;
@@ -84,6 +79,7 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             countdown = 0;
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.velocity = Vector3.zero;
         }
     }
@@ -92,22 +88,17 @@ public class EnemyMovement : MonoBehaviour
     private void Chase()
     {
         // Only move when player is within a certain distance range
-        distance = Vector3.Distance(player.position, transform.position);
+        float distance = Vector3.Distance(player.position, transform.position);
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         if (distance >= range && distance <= chaseRange)
         {
             transform.LookAt(player);
-            direction = Vector3.Normalize(player.position - transform.position);
+            Vector3 direction = Vector3.Normalize(player.position - transform.position);
             rb.velocity = direction * speed;
         }
         else
         {
             rb.velocity = Vector3.zero;
         }
-    }
-
-    // Method to follow a path around the level
-    private void Pathfind()
-    {
-        
     }
 }

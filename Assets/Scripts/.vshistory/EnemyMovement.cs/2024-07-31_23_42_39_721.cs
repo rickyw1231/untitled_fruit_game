@@ -9,7 +9,7 @@ public enum MovementType
 {
     RandomMovement, // Move in random directions
     Chase, // Chase the player within a certain distance
-    Pathfind // Follow a specific path around the map
+    Pathfind
 }
 
 public class EnemyMovement : MonoBehaviour
@@ -30,7 +30,6 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         countdown = 0;
-        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -44,9 +43,6 @@ public class EnemyMovement : MonoBehaviour
                 break;
             case MovementType.Chase:
                 Chase();
-                break;
-            case MovementType.Pathfind:
-                Pathfind();
                 break;
         }
     }
@@ -65,6 +61,7 @@ public class EnemyMovement : MonoBehaviour
                 countdown = timer;
 
                 // Stop current movement
+                rb = gameObject.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
 
                 // Generate a random direction, multiply it by the speed, and move
@@ -84,6 +81,7 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             countdown = 0;
+            rb = gameObject.GetComponent<Rigidbody>();
             rb.velocity = Vector3.zero;
         }
     }
@@ -93,6 +91,7 @@ public class EnemyMovement : MonoBehaviour
     {
         // Only move when player is within a certain distance range
         distance = Vector3.Distance(player.position, transform.position);
+        rb = gameObject.GetComponent<Rigidbody>();
         if (distance >= range && distance <= chaseRange)
         {
             transform.LookAt(player);
@@ -108,6 +107,6 @@ public class EnemyMovement : MonoBehaviour
     // Method to follow a path around the level
     private void Pathfind()
     {
-        
+        if
     }
 }

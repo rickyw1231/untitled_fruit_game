@@ -9,7 +9,7 @@ public enum MovementType
 {
     RandomMovement, // Move in random directions
     Chase, // Chase the player within a certain distance
-    Pathfind // Follow a specific path around the map
+    Pathfind
 }
 
 public class EnemyMovement : MonoBehaviour
@@ -44,9 +44,6 @@ public class EnemyMovement : MonoBehaviour
                 break;
             case MovementType.Chase:
                 Chase();
-                break;
-            case MovementType.Pathfind:
-                Pathfind();
                 break;
         }
     }
@@ -108,6 +105,6 @@ public class EnemyMovement : MonoBehaviour
     // Method to follow a path around the level
     private void Pathfind()
     {
-        
+        if
     }
 }
