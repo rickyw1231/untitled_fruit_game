@@ -122,6 +122,10 @@ public class EnemyMovement : MonoBehaviour
         // This ensures that the enemy will consistently move towards the point after stopping
         rb.velocity = velocity;
 
+        // Look in the direction of movement
+        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+        transform.rotation = rotation;
+
         // Move if far enough from the player
         distance = Vector3.Distance(player.position, transform.position);
         if (distance >= range)
@@ -153,9 +157,5 @@ public class EnemyMovement : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
-
-        // Look in the direction of movement
-        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
-        transform.rotation = rotation;
     }
 }

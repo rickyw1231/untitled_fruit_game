@@ -153,9 +153,5 @@ public class EnemyMovement : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
-
-        // Look in the direction of movement
-        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
-        transform.rotation = rotation;
     }
 }
