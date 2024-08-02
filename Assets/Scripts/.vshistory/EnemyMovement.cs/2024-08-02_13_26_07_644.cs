@@ -21,26 +21,22 @@ public class EnemyMovement : MonoBehaviour
     public float speed; // Speed of movement
     public float timer; // Time between movement switching, if applicable
     public Transform[] pathPoints; // Points on map to travel to in order
-    public int startPoint; // Initial path point
 
     private float countdown; // Used for counting down the timer
     private float distance; // Distance to player
     private Vector3 direction; // Direction to move in
     private Rigidbody rb; // Rigidbody of enemy
-    private int pathNum; // Path point currently being traveled to
+    public int pathNum; // Path point currently being traveled to
     private float distanceToPoint; // Distance to the next path point
     private float prevDistToPoint; // Distance to next path point in previous frame
-    private Vector3 velocity; // Stored current velocity
 
     // Start is called before the first frame update
     void Start()
     {
         countdown = 0;
         pathNum = 0;
-        prevDistToPoint = 0f;
+        prevDistToPoint = float.MaxValue;
         rb = gameObject.GetComponent<Rigidbody>();
-        velocity = Vector3.zero;
-        pathNum = startPoint;
     }
 
     // Update is called once per frame
@@ -118,37 +114,31 @@ public class EnemyMovement : MonoBehaviour
     // Method to follow a path around the level
     private void Pathfind()
     {
-        // Update the velocity
-        // This ensures that the enemy will consistently move towards the point after stopping
-        rb.velocity = velocity;
-
-        // Move if far enough from the player
         distance = Vector3.Distance(player.position, transform.position);
         if (distance >= range)
         {
-            // Determine if the distance to the next point is the same as the one from the previous frame
-            // This allows us to check for intersections
             distanceToPoint = Vector3.Distance(pathPoints[pathNum].position, transform.position);
-            if(distanceToPoint <= prevDistToPoint)
+            Debug.Log("dist " + distanceToPoint);
+            Debug.Log("prev dist " + prevDistToPoint);
+            if(distanceToPoint < prevDistToPoint)
             {
+                Debug.Log("yes");
                 prevDistToPoint = distanceToPoint;
+                prevDistToPoint = Vector3.Distance(pathPoints[pathNum].position, transform.position);
+                direction = Vector3.Normalize(pathPoints[pathNum].position - transform.position);
+                rb.velocity = direction * speed;
             }
-            // If so, head to the next point
             else
             {
+                Debug.Log("no");
                 pathNum++;
                 if(pathNum >= pathPoints.Length)
                 {
                     pathNum = 0;
                 }
-
-                // Move towards the new point
-                prevDistToPoint = Vector3.Distance(pathPoints[pathNum].position, transform.position);
-                direction = Vector3.Normalize(pathPoints[pathNum].position - transform.position);
-                velocity = direction * speed;
+                prevDistToPoint = float.MaxValue;
             }
         }
-        // Otherwise don't move
         else
         {
             rb.velocity = Vector3.zero;

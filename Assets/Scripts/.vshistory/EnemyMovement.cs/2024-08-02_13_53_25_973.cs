@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
     private float distance; // Distance to player
     private Vector3 direction; // Direction to move in
     private Rigidbody rb; // Rigidbody of enemy
-    private int pathNum; // Path point currently being traveled to
+    public int pathNum; // Path point currently being traveled to
     private float distanceToPoint; // Distance to the next path point
     private float prevDistToPoint; // Distance to next path point in previous frame
     private Vector3 velocity; // Stored current velocity

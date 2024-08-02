@@ -21,13 +21,12 @@ public class EnemyMovement : MonoBehaviour
     public float speed; // Speed of movement
     public float timer; // Time between movement switching, if applicable
     public Transform[] pathPoints; // Points on map to travel to in order
-    public int startPoint; // Initial path point
 
     private float countdown; // Used for counting down the timer
     private float distance; // Distance to player
     private Vector3 direction; // Direction to move in
     private Rigidbody rb; // Rigidbody of enemy
-    private int pathNum; // Path point currently being traveled to
+    public int pathNum; // Path point currently being traveled to
     private float distanceToPoint; // Distance to the next path point
     private float prevDistToPoint; // Distance to next path point in previous frame
     private Vector3 velocity; // Stored current velocity
@@ -40,7 +39,6 @@ public class EnemyMovement : MonoBehaviour
         prevDistToPoint = 0f;
         rb = gameObject.GetComponent<Rigidbody>();
         velocity = Vector3.zero;
-        pathNum = startPoint;
     }
 
     // Update is called once per frame

@@ -21,7 +21,6 @@ public class EnemyMovement : MonoBehaviour
     public float speed; // Speed of movement
     public float timer; // Time between movement switching, if applicable
     public Transform[] pathPoints; // Points on map to travel to in order
-    public int startPoint; // Initial path point
 
     private float countdown; // Used for counting down the timer
     private float distance; // Distance to player
@@ -40,7 +39,6 @@ public class EnemyMovement : MonoBehaviour
         prevDistToPoint = 0f;
         rb = gameObject.GetComponent<Rigidbody>();
         velocity = Vector3.zero;
-        pathNum = startPoint;
     }
 
     // Update is called once per frame
