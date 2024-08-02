@@ -113,7 +113,6 @@ GameObject:
   - component: {fileID: 4817637597232782103}
   - component: {fileID: 4817637597232782102}
   - component: {fileID: 4817637597232782105}
-  - component: {fileID: 5968516883428694792}
   m_Layer: 8
   m_Name: PlaceholderEnemy
   m_TagString: Enemy
@@ -266,24 +265,6 @@ MonoBehaviour:
   hp: 100
   healthBar: {fileID: 7586278532987960140}
   item: {fileID: 4369371049948412196, guid: 2ee7011bf6db1ad489636d2415825d96, type: 3}
---- !u!114 &5968516883428694792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4817637597232782094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a9d4ff4bab4d6b41a78061708eebda9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementType: 0
-  player: {fileID: 0}
-  range: 5
-  chaseRange: 0
-  speed: 2
-  timer: 1
 --- !u!1001 &1705419345
 PrefabInstance:
   m_ObjectHideFlags: 0
