@@ -25,8 +25,6 @@ public class PathfindingMovement : MonoBehaviour
         if(distance < range)
         {
             agent.velocity = Vector3.zero;
-            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.zero;
         }
     }
 }

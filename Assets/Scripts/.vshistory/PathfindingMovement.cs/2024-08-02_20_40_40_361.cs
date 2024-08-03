@@ -14,19 +14,17 @@ public class PathfindingMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Face the player
-        transform.LookAt(player);
-        
-        // Move towards the player
-        agent.SetDestination(player.position);
-
-        // Zero the velocity if the player is within range
         float distance = Vector3.Distance(player.position, transform.position);
-        if(distance < range)
+        if(distance >= range)
+        {
+            agent.SetDestination(player.position);
+            Vector3 direction = Vector3.Normalize(agent.velocity);
+            Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+            transform.rotation = rotation;
+        }
+        else
         {
             agent.velocity = Vector3.zero;
-            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.zero;
         }
     }
 }

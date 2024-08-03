@@ -11,22 +11,28 @@ public class PathfindingMovement : MonoBehaviour
     public NavMeshAgent agent; // Moving enemy
     public float range; // Distance from player in which enemy can move
 
+    private Rigidbody rb; // Rigidbody of enemy
+
+    void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        // Face the player
-        transform.LookAt(player);
-        
-        // Move towards the player
         agent.SetDestination(player.position);
 
-        // Zero the velocity if the player is within range
         float distance = Vector3.Distance(player.position, transform.position);
-        if(distance < range)
+        if (distance < range)
         {
             agent.velocity = Vector3.zero;
-            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.zero;
+        }
+        else
+        {
+            Vector3 direction = Vector3.Normalize(agent.velocity);
+            Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+            transform.rotation = rotation;
         }
     }
 }
