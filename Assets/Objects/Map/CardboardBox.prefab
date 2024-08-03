@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 533544988324487610}
   - component: {fileID: 3929214368258417578}
   - component: {fileID: 5870859385224693925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CardboardBox
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
