@@ -30,7 +30,7 @@ public class ShootingScript : MonoBehaviour
 
     void Start()
     {
-        periodCountDown = Random.Range(0f, delay);
+        periodCountDown = 0;
         bulletCountDown = timeBtwnBulls;
         bulletsToShoot = numBullets;
     }
