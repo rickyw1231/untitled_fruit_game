@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     public int coinsToWin; // Number of coins needed to win
 
     public HealthBar healthBar; // Player health bar
-    public CoinCounter coinCounter; // Keeps track of coins
 
     private int maxHP; // Maximum HP used for comparison
     private int coinsCollected; // Number of coins collected by the player
@@ -58,7 +57,6 @@ public class Player : MonoBehaviour
     public void OnCoinCollect()
     {
         coinsCollected++;
-        coinCounter.AddCoin();
     }
 
     // Method to determine whether all coins have been collected
