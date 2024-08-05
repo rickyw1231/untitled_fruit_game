@@ -12,25 +12,19 @@ public class Bullet : MonoBehaviour
     // Method to trigger collision event
     public void OnTriggerEnter(Collider other)
     {
+        // Destroy the bullet on collision
+        Destroy(gameObject);
 
         // If the object hit was the player and the bullet is not from the player, damage the player
         if (other.gameObject.tag == "Player" && !fromPlayer)
         {
             other.gameObject.GetComponent<Player>().OnDamage(damage);
-            Destroy(gameObject);
         }
 
         // If the object hit was an enemy and the bullet is from the player, damage the enemy
         else if (other.gameObject.tag == "Enemy" && fromPlayer)
         {
             other.gameObject.GetComponent<Enemy>().OnDamage(damage);
-            Destroy(gameObject);
-        }
-
-        // Destroy the object if hit anything except an enemy
-        else if(other.gameObject.tag != "Enemy")
-        {
-            Destroy(gameObject);
         }
     }
 

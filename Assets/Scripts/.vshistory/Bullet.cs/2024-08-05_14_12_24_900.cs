@@ -27,7 +27,6 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // Destroy the object if hit anything except an enemy
         else if(other.gameObject.tag != "Enemy")
         {
             Destroy(gameObject);
