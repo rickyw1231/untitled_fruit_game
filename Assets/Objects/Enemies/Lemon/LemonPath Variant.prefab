@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5162374048490497569
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1259707196488309708, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309710, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309711, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259707196488309717, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_Name
+      value: LemonPath
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026043744082888814, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175125486165309093, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175125486165309093, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+--- !u!1 &6259738349994049012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1259707196488309717, guid: 8063b5fcb6d07ad49a10ffb5ac0d77e0, type: 3}
+  m_PrefabInstance: {fileID: 5162374048490497569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &85928098931879507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259738349994049012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa19af69dd19ba642b57934d81eba063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  range: 5
+  speed: 7
+  pathPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  startPoint: 0

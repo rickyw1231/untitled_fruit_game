@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3786508198410869574
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3646582112886876681, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646582112886876681, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785836437244794050, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025760, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025762, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025763, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525967138803025785, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_Name
+      value: WatermelonPath
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7790603670edf5b408122492067c558e, type: 3}
+--- !u!1 &4818342345846053951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8525967138803025785, guid: 7790603670edf5b408122492067c558e, type: 3}
+  m_PrefabInstance: {fileID: 3786508198410869574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8744391628545175870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4818342345846053951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa19af69dd19ba642b57934d81eba063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  range: 5
+  speed: 5
+  pathPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  startPoint: 0
