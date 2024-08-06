@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9012952344508405933
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4205887953257015556, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205887953257015556, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4345109412523022287, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562797, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562798, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562799, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121832290552562804, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_Name
+      value: OrangeRandom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+--- !u!1 &253101272052292825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9121832290552562804, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+  m_PrefabInstance: {fileID: 9012952344508405933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5529416463916660908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253101272052292825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db39a93cae80fb246b45064ed23bb446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  timer: 0.7
+  range: 5
+  speed: 300
