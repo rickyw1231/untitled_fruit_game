@@ -31,7 +31,6 @@ public class Coin : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             // Collect, delete the coin
-            audioManager.PlaySound(audioManager.coin);
             other.GetComponent<Player>().OnCoinCollect();
             Destroy(gameObject);
 

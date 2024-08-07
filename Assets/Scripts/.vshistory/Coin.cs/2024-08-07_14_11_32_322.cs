@@ -14,7 +14,7 @@ public class Coin : MonoBehaviour
 
     void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<audioManager>();
     }
 
     // Update is called once per frame
@@ -31,7 +31,6 @@ public class Coin : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             // Collect, delete the coin
-            audioManager.PlaySound(audioManager.coin);
             other.GetComponent<Player>().OnCoinCollect();
             Destroy(gameObject);
 

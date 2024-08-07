@@ -11,6 +11,7 @@ TagManager:
   - EnemyBullet
   - Item
   - UI
+  - Audio
   layers:
   - Default
   - TransparentFX

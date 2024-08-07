@@ -22,7 +22,6 @@ public class AudioManager : MonoBehaviour
         music.Play();
     }
 
-    // Method to play a sound effect
     public void PlaySound(AudioClip clip)
     {
         sfx.PlayOneShot(clip);
