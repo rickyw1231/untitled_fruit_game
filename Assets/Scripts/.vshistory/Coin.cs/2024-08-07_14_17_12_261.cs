@@ -9,7 +9,6 @@ public class Coin : MonoBehaviour
 {
     public float speed; // Speed of rotation
 
-    [SerializeField]
     private UnityEvent onTriggerEnter; // Events to execute
 
     // Update is called once per frame
@@ -23,14 +22,14 @@ public class Coin : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         // Increment the player's coin count
-        if (other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
             // Collect, delete the coin
             other.GetComponent<Player>().OnCoinCollect();
             Destroy(gameObject);
 
             // Check if all coins have been collected
-            if (other.GetComponent<Player>().CollectedAllCoins())
+            if(other.GetComponent<Player>().CollectedAllCoins())
             {
                 // If so, spawn new enemies
                 onTriggerEnter?.Invoke();

@@ -3348,7 +3348,7 @@ MonoBehaviour:
   background: {fileID: 8300000, guid: 2625b26f1c7e17146a66c6da14baf2be, type: 3}
   shoot: {fileID: 8300000, guid: c5c491b5711d6b240a8f50ad9f79b086, type: 3}
   hit: {fileID: 8300000, guid: ec0506c1410fe8b439fc767beec4b967, type: 3}
-  coin: {fileID: 8300000, guid: aacf875b599bcec4583805362d29e79e, type: 3}
+  coin: {fileID: 8300000, guid: d7734ab0d52e7504a8f650ea9df9dfc2, type: 3}
   heal: {fileID: 8300000, guid: 2bb8b77c148eb8c4fb9871d13629b155, type: 3}
 --- !u!4 &1218217456
 Transform:
