@@ -70,7 +70,6 @@ public class Player : MonoBehaviour
     public void OnCoinCollect()
     {
         coinsCollected++;
-        audioManager.PlaySound(audioManager.coin);
         coinCounter.AddCoin();
     }
 

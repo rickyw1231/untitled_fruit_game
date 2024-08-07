@@ -19,15 +19,14 @@ public class ShootingScript : MonoBehaviour
 
     public float requiredDistance; // Distance from player needed to begin shooting
 
+    [HideInInspector]
     private float periodCountDown; // For counting down between shooting periods
-    private float bulletCountDown; // For counting down between bullets
-    private float bulletsToShoot; // For determining the number of bullets left to shoot
-    private AudioManager audioManager; // For playing sound effects
 
-    void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
+    [HideInInspector]
+    private float bulletCountDown; // For counting down between bullets
+
+    [HideInInspector]
+    private float bulletsToShoot; // For determining the number of bullets left to shoot
 
     void Start()
     {
@@ -88,9 +87,6 @@ public class ShootingScript : MonoBehaviour
     // Method to shoot
     void Shoot()
     {
-        // Play shoot sound
-        audioManager.PlaySound(audioManager.shoot);
-
         // Create a bullet object and launch it in the direction of the player
         GameObject projectile = Instantiate(bullet, source.position, source.rotation);
         Vector3 direction = Vector3.Normalize(target.position - source.position);

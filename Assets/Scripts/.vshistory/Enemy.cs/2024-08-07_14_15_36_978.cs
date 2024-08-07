@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         // Update the health bar
         healthBar.SetHP((float)hp / maxHP);
 
-        // Play hit sound
+        // Play sound
         audioManager.PlaySound(audioManager.hit);
 
         // If HP is 0, kill the enemy and try dropping an item 

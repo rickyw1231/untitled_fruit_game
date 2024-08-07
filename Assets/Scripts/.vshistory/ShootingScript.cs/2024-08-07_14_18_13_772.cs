@@ -90,7 +90,6 @@ public class ShootingScript : MonoBehaviour
     {
         // Play shoot sound
         audioManager.PlaySound(audioManager.shoot);
-
         // Create a bullet object and launch it in the direction of the player
         GameObject projectile = Instantiate(bullet, source.position, source.rotation);
         Vector3 direction = Vector3.Normalize(target.position - source.position);

@@ -15,12 +15,6 @@ public class Player : MonoBehaviour
 
     private int maxHP; // Maximum HP used for comparison
     private int coinsCollected; // Number of coins collected by the player
-    private AudioManager audioManager; // For playing sound effects
-
-    void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
 
     void Start()
     {
@@ -33,9 +27,6 @@ public class Player : MonoBehaviour
     {
         // Damage the player by the damage dealt by the bullet
         hp -= damage;
-
-        // Play hit sound
-        audioManager.PlaySound(audioManager.hit);
 
         // If the HP is 0, kill the player and reset the scene
         if (hp <= 0)
@@ -53,9 +44,6 @@ public class Player : MonoBehaviour
         // Increase the player's HP
         hp += health;
 
-        // Play heal sound
-        audioManager.PlaySound(audioManager.heal);
-
         // If the resulting HP exceeds the max HP, set the HP to max
         if (hp > maxHP)
         {
@@ -70,7 +58,6 @@ public class Player : MonoBehaviour
     public void OnCoinCollect()
     {
         coinsCollected++;
-        audioManager.PlaySound(audioManager.coin);
         coinCounter.AddCoin();
     }
 

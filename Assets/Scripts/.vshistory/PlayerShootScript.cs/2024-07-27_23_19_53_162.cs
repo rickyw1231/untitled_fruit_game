@@ -17,12 +17,6 @@ public class PlayerShootScript : MonoBehaviour
     public float delay; // Time between bullets
 
     private float countdown; // Used for timing the bullets
-    private AudioManager audioManager; // For playing sound effects
-
-    void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
 
     void Start()
     {
@@ -47,9 +41,6 @@ public class PlayerShootScript : MonoBehaviour
         {
             // Reset the timer
             countdown = delay;
-
-            // Play shoot sound
-            audioManager.PlaySound(audioManager.shoot);
 
             // Shoot the bullet
             GameObject projectile = Instantiate(bullet, source.position, source.rotation);

@@ -11,12 +11,6 @@ public class Enemy : MonoBehaviour
     public GameObject item; // Item to drop on death
 
     private int maxHP; // Maximum enemy HP
-    private AudioManager audioManager; // For playing sound effects
-
-    void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
 
     void Start()
     {
@@ -31,9 +25,6 @@ public class Enemy : MonoBehaviour
 
         // Update the health bar
         healthBar.SetHP((float)hp / maxHP);
-
-        // Play hit sound
-        audioManager.PlaySound(audioManager.hit);
 
         // If HP is 0, kill the enemy and try dropping an item 
         if(hp <= 0)

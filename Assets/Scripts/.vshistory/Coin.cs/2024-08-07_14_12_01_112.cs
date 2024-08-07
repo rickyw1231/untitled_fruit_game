@@ -10,6 +10,12 @@ public class Coin : MonoBehaviour
     public float speed; // Speed of rotation
 
     private UnityEvent onTriggerEnter; // Events to execute
+    private AudioManager audioManager; // For playing sound effects
+
+    void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,6 +31,7 @@ public class Coin : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             // Collect, delete the coin
+            audioManager.PlaySound(audioManager.coin);
             other.GetComponent<Player>().OnCoinCollect();
             Destroy(gameObject);
 

@@ -48,9 +48,6 @@ public class PlayerShootScript : MonoBehaviour
             // Reset the timer
             countdown = delay;
 
-            // Play shoot sound
-            audioManager.PlaySound(audioManager.shoot);
-
             // Shoot the bullet
             GameObject projectile = Instantiate(bullet, source.position, source.rotation);
             Vector3 direction = Vector3.Normalize(mousePos - source.position);

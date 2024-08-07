@@ -53,9 +53,6 @@ public class Player : MonoBehaviour
         // Increase the player's HP
         hp += health;
 
-        // Play heal sound
-        audioManager.PlaySound(audioManager.heal);
-
         // If the resulting HP exceeds the max HP, set the HP to max
         if (hp > maxHP)
         {
@@ -70,7 +67,6 @@ public class Player : MonoBehaviour
     public void OnCoinCollect()
     {
         coinsCollected++;
-        audioManager.PlaySound(audioManager.coin);
         coinCounter.AddCoin();
     }
 
