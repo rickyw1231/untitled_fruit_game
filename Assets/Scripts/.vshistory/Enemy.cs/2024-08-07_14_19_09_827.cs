@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     public int hp; // Current enemy HP
     public HealthBar healthBar; // Enemy health bar
     public GameObject item; // Item to drop on death
-    public int dropChance; // Chance of dropping an item
 
     private int maxHP; // Maximum enemy HP
     private AudioManager audioManager; // For playing sound effects
@@ -47,9 +46,9 @@ public class Enemy : MonoBehaviour
     // Method to drop an item on death
     private void DropItem()
     {
-        // Drop an item through RNG
-        int check = Random.Range(1, 101);
-        if(check <= dropChance)
+        // 1/3 chance to drop an item
+        int check = Random.Range(1, 4);
+        if(check == 3)
         {
             Vector3 position = new Vector3(transform.position.x, 0.25f, transform.position.z);
             Instantiate(item, position, Quaternion.identity);

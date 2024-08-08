@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
     // Method to drop an item on death
     private void DropItem()
     {
-        // Drop an item through RNG
+        // Drop an item
         int check = Random.Range(1, 101);
         if(check <= dropChance)
         {
