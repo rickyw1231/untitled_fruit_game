@@ -19,6 +19,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4870705241933075479, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870705241933075479, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9121832290552562797, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
       propertyPath: m_Constraints
       value: 116
@@ -73,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9121832290552562804, guid: 5921da90c51422a4d9c55487d494842f, type: 3}
       propertyPath: m_Name
-      value: OrangePath
+      value: OrangePath Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5921da90c51422a4d9c55487d494842f, type: 3}

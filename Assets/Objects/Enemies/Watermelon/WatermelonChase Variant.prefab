@@ -19,6 +19,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5688237126564450724, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688237126564450724, guid: 7790603670edf5b408122492067c558e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8525967138803025760, guid: 7790603670edf5b408122492067c558e, type: 3}
       propertyPath: m_Constraints
       value: 116
@@ -73,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8525967138803025785, guid: 7790603670edf5b408122492067c558e, type: 3}
       propertyPath: m_Name
-      value: WatermelonChase
+      value: WatermelonChase Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7790603670edf5b408122492067c558e, type: 3}
